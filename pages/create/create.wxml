@@ -1,0 +1,77 @@
+<template name="realtionAvatar">
+  <view class="item">
+    <!-- tap_relation 的数据绑定之后可以考虑通过 radio[checked] 的 css 方式来实现-->
+    <radio value="{{item.id}}" hidden checked="{{item.id == 1}}"id="{{'r'+item.id}}"/>
+    <label class="labeled" for="{{'r'+item.id}}">
+      <view class="head {{item.id == query.relationID ? 'select' : ''}}" data-id="{{item.id}}" bindtap="tap_relation">
+         <image class="avatar" src="../../images/{{item.img}}.png"></image>
+      </view>
+      <text class="call">{{item.name}}</text>
+    </label>
+  </view>
+</template>
+<template name="genderAvatar">
+  <view class="item">
+    <radio value="{{item.id}}" hidden checked="{{item.id == 1}}" id="{{'g'+item.id}}"/>
+    <label class="labeled" for="{{'g'+item.id}}">
+      <view class="head {{item.id == query.genderID ? 'select' : ''}}" data-id="{{item.id}}" bindtap="tap_gender">
+         <image class="avatar" src="../../images/{{item.img}}.png"></image>
+      </view>
+      <text class="call">{{item.name}}</text>
+    </label>
+  </view>
+</template>
+
+<!--create.wxml-->
+<view class="container">
+  <view class="inner">
+
+    <form bindsubmit="generate" >
+      <!-- 称呼 -->
+      <view class="named {{isMore ? 'more' : ''}}">
+        <input bindinput="changeToName" name="toname" placeholder="怎么称呼TA?(不超过10个字)" input-placeholder="i-named"/>
+      </view>
+
+      <!-- 类别 -->
+      <view class="cate" >
+        <div class="hd">
+          <text>TA是你的</text>
+        </div>
+        <div class="bd">
+          <radio-group name="relationID">
+            <view class="row r1">
+              <block wx:for="{{relation1}}" wx:key="{{item}}">
+                <template is="realtionAvatar" data="{{query,item}}"/>
+              </block>
+            </view>
+            <view class="row r2" >
+              <block wx:for="{{relation2}}" wx:key="{{item}}">
+                <template is="realtionAvatar" data="{{query,item}}"/>
+              </block>
+            </view>
+          </radio-group>
+        </div>
+      </view>
+      <!-- 性别 -->
+      <view class="sex">
+        <div class="hd">
+          <text>TA的性别</text>
+        </div>
+        <div class="bd">
+          <radio-group name="genderID">
+            <view class="row">
+              <block wx:for="{{gender}}" wx:key="{{item}}">
+                <template is="genderAvatar" data="{{query,item,index}}"/>
+              </block>
+            </view>
+          </radio-group>
+        </div>
+      </view>
+
+      <!-- 生成 -->
+      <view>
+        <button form-type="submit" hover-class="navigator-hover" class="submit-btn" >捎句祝福话</button>
+      </view>
+    </form>
+  </view>
+</view>

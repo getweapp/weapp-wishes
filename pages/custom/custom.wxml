@@ -1,0 +1,71 @@
+<view class="container">
+  <!--  {{ showMore ? 'more' : ''}}  -->
+  <view class="mask"></view>
+  <view class="inner">
+
+    <form bindsubmit="save">
+      <!-- to name -->
+      <view class="item">
+        <text class="key">对方称呼</text>
+        <input name="toname" class="value" value="{{toname}}" bindblur="setToName"></input>
+      </view>
+
+      <!-- from name -->
+      <view class="item">
+        <text class="key">祝福落款</text>
+        <input name="nickName" class="value" value="{{userInfo.nickName}}" bindblur="setNickName"></input>
+      </view>
+
+      <!-- best wishes -->
+      <view class="item best-wishes">
+        <textarea bindinput="bindChangeText" class="textarea" name="best-wishes" value="{{wishes}}" id="best-wishes" bindblur="setWishes"></textarea>
+        <text class="word-tips {{isRed ? 'red' : ''}}">50字以内</text>
+      </view>
+
+      <!-- select panel -->
+      <view class="select-panel">
+        <button class="tips" plain="true" hover-class="tapped" bindtap="more-template">
+          <text>选择其他推荐祝福语</text>
+          <image class="bg" src="../../images/indicator.png"></image>
+        </button>
+      </view>
+
+      <!-- controls -->
+      <view class="btns">
+        <!--<button class="cancel-btn" hover-class="hover-btn" bindtap="cancel">取消</button>-->
+        <button form-type="submit" class="save-btn" hover-class="hover-btn">保存</button>
+      </view>
+
+    </form>
+
+
+    <!-- <view class="modal">
+      <view class="header">
+        <view class="header-select">
+          <button data-index="0" plain="true" hover-class="tapped" bindtap="swiperTap" class="{{ swiperIndex == 0? 'on' : '' }}">全部</button>
+          <button data-index="1" plain="true" hover-class="tapped" bindtap="swiperTap" class="{{ swiperIndex == 1? 'on' : '' }}">父母</button>
+          <button data-index="2" plain="true" hover-class="tapped" bindtap="swiperTap" class="{{ swiperIndex == 2? 'on' : '' }}">爸爸</button>
+          <button data-index="3" plain="true" hover-class="tapped" bindtap="swiperTap" class="{{ swiperIndex == 3? 'on' : '' }}">妈妈</button>
+        </view>
+        <view class="highlight-line" style="left:{{ swiperIndex * 100 + 10 }}rpx"></view>
+        <view class="header-confirm">
+          <button class="confirm" plain="true" hover-class="tapped" bindtap="confirmTap">确定</button>
+        </view>
+      </view>
+
+        <scroll-view scroll-y="true">
+          <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}">
+            <view class="item">
+              <view class="state " data-id="{{item}}" bindtap="circleTap">
+                <view class="circle {{itemIndex == item ? 'on' : ''}}"></view>
+              </view>
+              <view class="sentence">
+                生命无需过百岁，健康就行。\r\n朋友无须有多少，有你就行。\r\n好朋友祝你新年快乐!
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+    </view> -->
+  </view>
+
+</view>

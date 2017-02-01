@@ -1,0 +1,80 @@
+<view class="container">
+  <view class="inner">
+    <!-- wishes panel -->
+    <view class="wishes-panel">
+      <image class="bg" src="../../images/wishes-panel.png"></image>
+      
+      <!-- custom card -->
+      <block wx:if="{{state === '0'}}">
+        <view bindtap="bindViewTap">
+          <view class="userinfo">
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+          </view>
+          <view class="to-name">
+            <text>祝 {{toname}} :</text>
+          </view>
+          <view class="best-wishes">
+            <text>{{sentence}}</text>
+          </view>
+          <view class="from-name">
+            <text wx:if="{{state === '0'}}">{{userInfo.nickName}}</text>
+            <text wx:if="{{state === '1'}}">{{fromname}}</text>
+          </view>
+          <view class="date">
+            <text>{{today}}</text>
+          </view>
+        </view>
+      </block>
+
+      <!-- receive card -->
+      <block wx:if="{{state === '1'}}">
+        <view class="userinfo">
+          <image class="userinfo-avatar" src="{{fromavatar}}" background-size="cover"></image>
+        </view>
+        <view class="to-name">
+          <text>祝 {{toname}} :</text>
+        </view>
+        <view class="best-wishes">
+          <text>{{sentence}}</text>
+        </view>
+        <view class="from-name">
+          <text>{{fromname}}</text>
+        </view>
+        <view class="date">
+          <text>{{sentday}}</text>
+        </view>
+      </block>
+    </view>
+
+    <!-- btns -->
+    <view class="btns">
+      <block wx:if="{{state === '0'}}">
+        <button class="change-btn" bindtap="changeOne">换一个</button><button class="finish-btn" bindtap="shareTips">送祝福</button>
+      </block>
+      <block wx:if="{{state === '1'}}">
+        <button class="custom-btn" bindtap="customCard">制作我的祝福话</button>
+      </block>
+    </view>
+
+    <!-- copy right -->
+    <view class="copy-right">
+      <text>—— 腾讯网产品中心出品 ——</text>
+    </view>
+
+  </view>
+
+  <view class="overlay center" wx:if="{{!showCustomHint}}" bindtap="confirmCustomHint">
+    <view class="overlay-inner">
+      <view class="center-block">
+        <image class="hand" src="../../images/tap.png"></image>
+        <text>点击卡片文本可以编辑祝福信息</text>
+      </view>
+      <button hover-class="btn-hover">我知道了</button>
+    </view>
+  </view>
+</view>
+
+
+<div class="overlay" wx:if="{{showOverlay}}" bindtap="hideOverlay">
+  <image class="tips" src="../../images/share-tips.png"></image>
+</div>

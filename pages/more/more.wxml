@@ -1,0 +1,22 @@
+<view class="container">
+  <scroll-view scroll-y="true">
+    <!-- <form bindsubmit="save"> -->
+      <!-- <radio-group name="select-more"> -->
+        <block wx:for="{{wishList}}" wx:key="{{item}}">
+          <view class="item {{checkedID === item.id ? 'on' : ''}}" bindtap="check" data-id="{{item.id}}" >
+            <!-- <radio value="{{item.id}}" hidden id="{{item.id}}"/> -->
+            <!-- <label class="label" for="{{item.id}}" bindtap="check" data-id="{{item.id}}"> -->
+                <view class="state">
+                  <view class="circle {{itemIndex == item ? 'on' : ''}}"></view>
+                </view>
+                <view class="sentence">
+                  {{item.wishes}}
+                </view>
+            <!-- </label> -->
+          </view>
+        </block>
+      <!-- </radio-group> -->
+    <!-- </form> -->
+  </scroll-view>
+  <button class="save" hover-class="save-hover" bindtap="save">确定</button>
+</view>

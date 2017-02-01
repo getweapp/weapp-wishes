@@ -1,0 +1,85 @@
+scroll-view{
+  background-color:#ffffff;
+  height:calc(100% - 88rpx);
+}
+
+scroll-view .item{
+  box-sizing:border-box;
+  margin-top:0;
+  margin: 0 24rpx;
+  border:none;
+  background-color:transparent;
+  font-size:28rpx;
+
+  display:flex;
+  align-items: center;
+  padding:26rpx 6rpx;
+}
+
+scroll-view .item label{
+  /*display:flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding:26rpx 6rpx;*/
+}
+
+
+
+scroll-view .item + .item{
+  border-top:1px solid #e0e0e0;
+}
+
+scroll-view .item .state{
+  margin-right:20rpx;
+  width:32rpx;
+  height:32rpx;
+  border:2px solid #e7404d;
+  border-radius:100%;
+  position:relative;
+}
+
+scroll-view .item .state .circle{
+  position:absolute;
+  width:20rpx;
+  height:20rpx;
+  background-color:#e7404d;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  border-radius:100%;
+  display:none;
+}
+
+scroll-view .item.on .state .circle{
+  display:block;
+}
+
+
+scroll-view .item .sentence{
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  flex:1;
+}
+
+.save{
+  height:88rpx;
+  width:100%;
+  background-color:#ffffff;
+  position:absolute;
+  bottom:0;
+  color:#e7404d;
+  border-top:1px solid #d6d6d6;
+  border-radius:0;
+}
+
+.save::after{
+  border:none;
+  border-radius:0
+}
+
+.save-hover{
+  background:rgba(242, 242, 242,0.7);
+}

@@ -1,0 +1,166 @@
+.container{
+  position: relative;
+  background: #e7404d;
+  background: linear-gradient(to bottom, #e7404d 70%, #cc3944);
+}
+.inner{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wishes-panel{
+  position: relative;
+  width: 460rpx;
+  height: 754rpx;
+  padding: 132rpx 113rpx 0;
+  font-size: 34rpx;
+  color: #424242;
+}
+.wishes-panel .bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.userinfo{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 180rpx;
+}
+.userinfo-avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+.to-name{
+  position: relative;
+  margin-top: 60rpx;
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow:hidden;
+}
+.best-wishes{
+  position: relative;
+  width:100%;
+  margin-top: 30rpx;
+  text-align: justify;
+  height: 180rpx;
+  overflow:hidden;
+  line-height: 45rpx;
+}
+.from-name{
+  position: relative;
+  margin-top: 30rpx;
+  text-align: right;
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow:hidden;
+}
+.date{
+  position: relative;
+  font-size: 28rpx;
+  text-align: right;
+}
+
+.btns{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 686rpx;
+  padding: 30rpx 65rpx 0;
+}
+.btns button{
+  width: 294rpx;
+  height: 88rpx;
+}
+.btns button::after{
+  display: none;
+}
+.btns .change-btn{
+  color: #e8c478;
+  border: 3rpx solid #e8c478;
+  background-color: #d93c48;
+}
+.btns .finish-btn, .btns .share-btn, .btns .custom-btn{
+  color: #fff;
+  border: 3rpx solid #e8c478;
+  background-color: #e8c478;
+  line-height: 88rpx;
+}
+.btns .button-hover{
+  opacity: 0.6
+}
+.copy-right{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 26rpx;
+  color: #fff;
+  opacity: 0.6;
+  margin-top: 30rpx;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6)
+}
+.overlay .tips{
+  position: absolute;
+  top: 30rpx;
+  right: 35rpx;
+  width: 589rpx;
+  height: 164rpx;
+  z-index: 2;
+}
+
+.overlay.center{
+  display:flex;
+  justify-content: center;
+}
+
+.btn-hover{
+  opacity:0.6;
+}
+.overlay-inner button{
+  width:260rpx;
+  background-color:transparent;
+  margin-top:60rpx;
+  border:3px solid #d9ba6a;
+  border-radius:12rpx;
+  color:#d9ba6a;
+  font-size:34rpx;
+}
+
+.center-block{
+  position: relative;
+  margin-top:360rpx;
+  box-sizing: border-box;
+  width: 568rpx;
+  height: 390rpx;
+  border:3px dashed #d9ba6a;
+  border-radius:10rpx;
+  color:#ffffff;
+  /*background:url('http://mat1.gtimg.com/joke/mars/weapp/wishes/tap.png') no-repeat top 104rpx center / 74rpx 88rpx;*/
+  font-size:34rpx;
+  text-align:center;
+  padding-top:232rpx;
+}
+.center-block .hand{
+  position:absolute;
+  top:105rpx;
+  left:50%;
+  width:74rpx;
+  height:88rpx;
+  margin-left:-35rpx;
+}
